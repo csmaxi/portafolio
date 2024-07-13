@@ -7,7 +7,7 @@ function Navtop() {
     return (
         <div className="flex justify-between my-12 items-center mx-12">
             <Link href="/">
-                <span className="italic text-3xl">
+                <span className="italic text-3xl font-light">
                     csmaxi
                 </span>
             </Link>

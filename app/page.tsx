@@ -8,11 +8,11 @@ function App() {
   return (
     <div>
       <Navtop />
-      <Separator className="mb-12  w-4/5 mx-auto" />
+
       <Header />
-      <Separator className="my-12 w-4/5 mx-auto"/>
-      <Skills />     
-      <Separator className="my-12 w-4/5 mx-auto"/>
+
+      <Skills />
+      <Separator className="my-12 w-4/5 shadow mx-auto" />
       <Footer />
     </div>
   );
