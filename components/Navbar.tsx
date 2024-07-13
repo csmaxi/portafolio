@@ -14,10 +14,10 @@ function Navtop() {
             <div className="flex gap-6">
                 <ul className="flex gap-4 items-center">
                     <Link href="">
-                        <li className="hover:underline cursor-pointer hover:text-orange-500 hover:font-bold">UX</li>
+                        <li className="hover:underline cursor-pointer hover:font-bold">UX</li>
                     </Link>
                     <Link href="">
-                        <li className="hover:underline cursor-pointer hover:text-orange-500 hover:font-bold">DEV</li>
+                        <li className="hover:underline cursor-pointer hover:font-bold">DEV</li>
                     </Link>
                 </ul>
                 <ModeToggle />
