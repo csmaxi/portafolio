@@ -1,54 +1,117 @@
 'use client'
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "./ui/button";
 
-function Footer() {
-    return (
-        <footer className="border-t border-gray-200 dark:border-gray-800">
-            <div className="mx-auto max-w-7xl px-4 py-12">
-                <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                            Desarrollador Web Full Stack
-                        </h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                            Creando experiencias digitales únicas
-                        </p>
-                    </div>
+const footerLinks = {
+  servicios: [
+    { name: "Desarrollo Web", href: "#" },
+    { name: "E-commerce", href: "#" },
+    { name: "Optimización SEO", href: "#" },
+    { name: "Mantenimiento", href: "#" },
+  ],
+  empresa: [
+    { name: "Sobre Mí", href: "#" },
+    { name: "Proyectos", href: "#" },
+    { name: "Contacto", href: "#" },
+  ],
+  legal: [
+    { name: "Términos y Condiciones", href: "#" },
+    { name: "Política de Privacidad", href: "#" },
+    { name: "Política de Cookies", href: "#" },
+  ],
+};
 
-                    <div className="flex items-center gap-6">
-                        <a
-                            href="https://github.com/tu-usuario"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
-                        >
-                            <Github className="h-5 w-5" />
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/tu-usuario"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
-                        >
-                            <Linkedin className="h-5 w-5" />
-                        </a>
-                        <a
-                            href="mailto:tu@email.com"
-                            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
-                        >
-                            <Mail className="h-5 w-5" />
-                        </a>
-                    </div>
-                </div>
+export default function Footer() {
+  return (
+    <footer className="bg-background border-t">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-lg font-semibold mb-4">csmaxi</h3>
+            <p className="text-muted-foreground mb-4">
+              Desarrollador web profesional creando experiencias digitales excepcionales.
+            </p>
+            <Button variant="outline" size="sm">
+              Contactar
+            </Button>
+          </div>
 
-                <div className="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8">
-                    <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-                        © {new Date().getFullYear()} Todos los derechos reservados
-                    </p>
-                </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Servicios</h3>
+            <ul className="space-y-2">
+              {footerLinks.servicios.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
+            <ul className="space-y-2">
+              {footerLinks.empresa.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2">
+              {footerLinks.legal.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* <div className="border-t mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Tu Nombre. Todos los derechos reservados.
+            </p>
+            <div className="flex space-x-4 mt-4 md:mt-0">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Twitter
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                GitHub
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+        </div> */}
+      </div>
+    </footer>
+  );
 }
-
-export default Footer;
